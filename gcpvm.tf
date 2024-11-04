@@ -8,7 +8,7 @@ resource "google_compute_instance" "default" {
       image = "debian-cloud/debian-11"
     }
   }
-
+}
   network_interface {
     network = "defaultvpc"
 
