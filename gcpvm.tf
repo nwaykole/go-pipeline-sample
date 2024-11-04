@@ -8,16 +8,16 @@ resource "google_compute_instance" "default" {
       image = "debian-cloud/debian-11"
     }
   }
-}
 
   network_interface {
-    network = "defaultvpc"
-    subnetwork = "defaultvpc"
+    network = "default"
+    subnetwork = "default"
 
+    access_config {
+      // This block is required to assign an external IP to the instance
+    }
+  }
 
-    #metadata_startup_script = "sudo apt-get update && sudo apt-get install apache2 -y && echo '<!doctype html><html><body><h1>Avenue Code is the leading software consulting agency focused on delivering end-to-end development solutions for digital transformation across every vertical. We pride ourselves on our technical acumen, our collaborative problem-solving ability, and the warm professionalism of our teams.!</h1></body></html>' | sudo tee /var/www/html/index.html"
-
-    // Apply the firewall rule to allow external IPs to access this instance
-    #tags = ["http-server"]
+  // Uncomment to allow external access to the instance
 
 }
