@@ -8,7 +8,7 @@ resource "google_compute_instance" "default" {
       image = "debian-cloud/debian-11"
     }
   }
-}
+
   network_interface {
     network = "defaultvpc"
 
@@ -17,7 +17,7 @@ resource "google_compute_instance" "default" {
     // Apply the firewall rule to allow external IPs to access this instance
     tags = ["http-server"]
 }
-
+}
 
 
 output "ip" {
