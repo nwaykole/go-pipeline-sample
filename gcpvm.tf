@@ -10,8 +10,8 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = "default"
-    subnetwork = "default"
+    network = "defaultvpc"
+    subnetwork = "defaultvpc"
 
     access_config {
       // This block is required to assign an external IP to the instance
